@@ -1,0 +1,174 @@
+/* Global */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: #000;
+  }
+  
+  /* Gallery */
+  
+  .gallery {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 90%;
+    max-height: 28vw;
+    overflow: hidden;
+    filter: grayscale(1) brightness(0.5);
+    cursor: pointer;
+   transition: 0.3s linear;
+  }
+  
+  .gallery:before,
+  .gallery:after {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 20%;
+    height: 100%;
+    z-index: 3;
+  }
+  
+  .gallery:before {
+    left: 0;
+    background:  linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+  }
+  
+  .gallery:after {
+    right: 0;
+    background:  linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+  }
+  
+  .gallery__stream {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 100%;
+  }
+  
+  .gallery__item {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    transition: 1s all ease;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    border-radius: 5px;
+  }
+  
+  .gallery__item:nth-child(1) {
+    left: 0;
+    z-index: 1;
+    transform: translateX(-100%) scale(.8);
+  }
+  
+  .gallery__item:nth-child(2) {
+    left: 0;
+    z-index: 2;
+    transform: translateX(-50%) scale(.8);
+  }
+  
+  .gallery__item:nth-child(3) {
+    left: 50%;
+    z-index: 4;
+    transform: translateX(-50%) scale(1);
+  }
+  
+  .gallery__item:nth-child(4) {
+    left: 100%;
+    z-index: 2;
+    transform: translateX(-50%) scale(.8);
+  }
+  
+  .gallery__item:nth-child(n+5) {
+    left: 100%;
+    z-index: 1;
+    transform: scale(.8);
+  }
+  
+  /* Controllers */
+  
+  .gallery__prev,
+  .gallery__next {
+    position: absolute;
+    top: 50%;
+    z-index: 4;
+    width: 50%;
+    height: 100%;
+    transform: translateX(-50%) translateY(-50%) scale(.8);
+    cursor: pointer;
+  }
+  
+  .gallery__prev {
+    left: 0;
+  }
+  
+  .gallery__next {
+    left: 100%;
+  }
+  
+  /* Backgrounds */
+  
+  .bg-1 {
+    background-image: url(https://images.alphacoders.com/122/1229889.jpg);
+  }
+  
+  .bg-2 {
+    background-image: url(https://www.zonasuburbana.com.br/wp-content/uploads/2020/04/Jovem-Dex-Mamacita-video.jpg);
+  }
+  .bg-3 {
+    background-image: url(https://wallpapers.com/images/hd/chase-atlantic-v8cqeslte0idywww.jpg);
+  }
+
+  .bg-5 {
+    background-image: url(https://www.radiofrance.fr/s3/cruiser-production/2019/09/7bf18c5d-4c96-48b1-bb19-0992a99d37df/560x315_the_notorious_b.i.g.gettyimages-83616582.jpg);
+  }
+  
+
+  button{
+    border-radius: 15%;
+    background-color: rgba(24, 82, 156, 0.753);
+    margin-left: 2%;
+    width: 10%;
+  }
+
+  a{
+    font-weight: 300;
+    text-decoration: none;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #f7f2f2;
+  }
+
+
+.gallery:hover {
+  filter: grayscale(0);
+}
+
+
+
+  @media only screen and (max-width: 480px) {
+    .gallery {
+      width: 100%;
+      height: 300px;
+     object-fit: cover;
+    object-position: bottom;
+    overflow: hidden;
+    filter: grayscale(1) brightness(0.5);
+    cursor: pointer;
+   transition: 0.3s linear;
+
+    }
+    .gallery:hover {
+      filter: grayscale(0);
+    }
+    
+  }
