@@ -176,7 +176,7 @@
 
 @media only screen and (max-width: 414px){
     .gallery{
-      width: 100%;
+      width: 500%;
       height: 300%;
      object-fit: cover;
     object-position: bottom;
