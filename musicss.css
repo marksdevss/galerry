@@ -1,0 +1,209 @@
+/* Global */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: #000;
+  }
+  
+  /* Gallery */
+  
+  .gallery{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 50%;
+    max-height: 28vw;
+    overflow: hidden;
+    filter: grayscale(1) brightness(0.5);
+    cursor: pointer;
+   transition: 0.3s linear;
+   -webkit-transition: all 0.7s ease;
+  transition: all 0.7s ease;
+}
+  
+  .gallery:before,
+  .gallery:after {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 20%;
+    height: 100%;
+    z-index: 3;
+  }
+  
+  .gallery:before {
+    left: 0;
+    background:  linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+  }
+  
+  .gallery:after {
+    right: 0;
+    background:  linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+  }
+  
+  .gallery__stream {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 100%;
+  }
+  
+  .gallery__item {
+    position: absolute;
+    width: 30%;
+    height: 100%;
+    transition: 1s all ease;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    border-radius: 5px;
+  }
+  
+  .gallery__item:nth-child(1) {
+    left: 0;
+    z-index: 1;
+    transform: translateX(-100%) scale(.8);
+  }
+  
+  .gallery__item:nth-child(2) {
+    left: 0;
+    z-index: 2;
+    transform: translateX(-50%) scale(.8);
+  }
+  
+  .gallery__item:nth-child(3) {
+    left: 50%;
+    z-index: 4;
+    transform: translateX(-50%) scale(1);
+  }
+  
+  .gallery__item:nth-child(4) {
+    left: 100%;
+    z-index: 2;
+    transform: translateX(-50%) scale(.8);
+  }
+  
+  .gallery__item:nth-child(n+5) {
+    left: 100%;
+    z-index: 1;
+    transform: scale(.8);
+  }
+  
+  /* Controllers */
+  
+  .gallery__prev,
+  .gallery__next {
+    position: absolute;
+    top: 50%;
+    z-index: 4;
+    width: 50%;
+    height: 100%;
+    transform: translateX(-50%) translateY(-50%) scale(.8);
+    cursor: pointer;
+  }
+  
+  .gallery__prev {
+    left: 0;
+  }
+  
+  .gallery__next {
+    left: 100%;
+  }
+  
+  /* Backgrounds */
+  
+  .bg-1 {
+    background-image: url(https://lastfm.freetls.fastly.net/i/u/ar0/e775820e83afa6c92399235b7294007c.jpg);
+}
+  
+  .bg-2 {
+    background-image: url(https://i.scdn.co/image/ab67616d0000b27352583a5c4a18dd1fc15507a8);
+  }
+  .bg-3 {
+    background-image: url(https://i.scdn.co/image/ab67616d0000b27360c81b4256b0ce2d6b23f9cc);
+}
+  
+  .bg-4 {
+    background-image: url(https://images.genius.com/81f053f6a4e6f9154304c67338c6e1a2.1000x1000x1.png);
+  }
+  
+  .bg-5 {
+    background-image: url(https://www.hypeness.com.br/1/2018/03/Capas-48.jpg);
+  }
+  
+  .bg-6 {
+    background-image: url(https://akamai.sscdn.co/tb/letras-blog/wp-content/uploads/2019/10/c311bb4-hybrid-theory.jpg);
+  }
+  
+  .bg-7 {
+    background-image: url(http://fm.djnyack.com/wp-content/uploads/2017/02/2pAC.jpg);
+  }  
+  .bg-8 {
+    background-image: url(https://upload.wikimedia.org/wikipedia/pt/3/35/The_Eminem_Show.jpg);
+  }
+  .bg-9 {
+    background-image: url(https://upload.wikimedia.org/wikipedia/pt/thumb/0/00/100%25_Charlie_Brown_Jr._-_Abalando_a_sua_F%C3%A1brica.jpg/220px-100%25_Charlie_Brown_Jr._-_Abalando_a_sua_F%C3%A1brica.jpg);
+  }
+
+  .bg-10 {
+    background-image: url(https://upload.wikimedia.org/wikipedia/en/1/13/The_Notorious_B.I.G._-_Juicy.jpeg);
+  }
+
+  .bg-11 {
+    background-image: url(https://upload.wikimedia.org/wikipedia/pt/e/e8/Linkin_Park_-_Papercut_CD_cover.jpg);
+  }
+
+  .bg-12 {
+    background-image: url(https://images.complex.com/complex/images/c_fill,dpr_auto,f_auto,q_auto,w_1400/fl_lossy,pg_1/travis-scott-album-cover-2016_omwibv/travis-scott-album-cover-2016?fimg-ssr-default);
+  }
+
+  button{
+    border-radius: 15%;
+    background-color: rgba(24, 82, 156, 0.753);
+    margin-left: 2%;
+    width: 10%;
+  }
+
+  a{
+    font-weight: 300;
+    text-decoration: none;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #f7f2f2;
+  }
+
+
+.gallery:hover{
+  filter: grayscale(0);
+}
+
+
+
+@media only screen and (max-width: 414px){
+    .gallery{
+      width: 90%;
+      height: 50%;
+     object-fit: cover;
+    object-position: bottom;
+    overflow: hidden;
+    filter: grayscale(1) brightness(0.5);
+    cursor: pointer;
+   transition: 0.3s linear;
+    }
+    .gallery:hover {
+      filter: grayscale(0);
+    }
+
+    button{
+      background-size: cover;
+      width: 20%;
+      height: 50%;
+    }
+}
